@@ -1,3 +1,4 @@
+dateModified: 1551645877
 email:
   fromEmail: levi@mostlyserious.io
   fromName: 'Craft Demo'
@@ -5,6 +6,72 @@ email:
 fieldGroups:
   861b809b-0e21-4836-938c-cd47b81bcff9:
     name: Common
+plugins:
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+sections:
+  55337af1-2367-47fe-8e26-422065e7bd6c:
+    enableVersioning: true
+    entryTypes:
+      cee82091-e714-4340-9fe1-f1b26f579478:
+        handle: homePage
+        hasTitleField: false
+        name: 'Home Page'
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: null
+    handle: homePage
+    name: 'Home Page'
+    propagateEntries: true
+    siteSettings:
+      97f47ded-c397-4935-a907-f1e28344839c:
+        enabledByDefault: true
+        hasUrls: true
+        template: pages/home
+        uriFormat: __home__
+    type: single
+  79e07047-bb12-4550-b070-89b39c20d824:
+    enableVersioning: true
+    entryTypes:
+      59d2aaaf-4cad-4a67-81f8-fcefc29b4c9d:
+        handle: blogListing
+        hasTitleField: true
+        name: 'Blog Listing'
+        sortOrder: 1
+        titleFormat: null
+        titleLabel: Title
+    handle: blogListing
+    name: 'Blog Listing'
+    propagateEntries: true
+    siteSettings:
+      97f47ded-c397-4935-a907-f1e28344839c:
+        enabledByDefault: true
+        hasUrls: true
+        template: pages/blogListing
+        uriFormat: blog
+    type: single
+  9fe861ca-2dad-41bb-a592-ff24cdadeb26:
+    enableVersioning: true
+    entryTypes:
+      7179579e-07b0-4850-93b4-4f7d5c521ec4:
+        handle: blogPosts
+        hasTitleField: true
+        name: 'Blog Posts'
+        sortOrder: 1
+        titleFormat: null
+        titleLabel: Title
+    handle: blogPosts
+    name: 'Blog Posts'
+    propagateEntries: true
+    siteSettings:
+      97f47ded-c397-4935-a907-f1e28344839c:
+        enabledByDefault: true
+        hasUrls: true
+        template: pages/blogDetail
+        uriFormat: 'blog/{slug}'
+    type: channel
 siteGroups:
   0c2edc31-fb81-4c3c-84b8-7e73a1a778f7:
     name: 'Craft Demo'
