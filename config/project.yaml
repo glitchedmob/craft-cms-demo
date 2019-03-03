@@ -1,0 +1,32 @@
+email:
+  fromEmail: levi@mostlyserious.io
+  fromName: 'Craft Demo'
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  861b809b-0e21-4836-938c-cd47b81bcff9:
+    name: Common
+siteGroups:
+  0c2edc31-fb81-4c3c-84b8-7e73a1a778f7:
+    name: 'Craft Demo'
+sites:
+  97f47ded-c397-4935-a907-f1e28344839c:
+    baseUrl: '@web'
+    handle: default
+    hasUrls: true
+    language: en-US
+    name: 'Craft Demo'
+    primary: true
+    siteGroup: 0c2edc31-fb81-4c3c-84b8-7e73a1a778f7
+    sortOrder: 1
+system:
+  edition: solo
+  live: true
+  name: 'Craft Demo'
+  schemaVersion: 3.1.25
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true
