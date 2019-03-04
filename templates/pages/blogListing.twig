@@ -1,10 +1,12 @@
 {% extends 'base.twig' %}
 
+{% set posts = craft.entries.section('blogPosts').all() %}
+
 {% block main %}
     <section class="jumbotron text-center mb-0">
         <div class="container">
-            <h1 class="jumbotron-heading">Album example</h1>
-            <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+            <h1 class="jumbotron-heading">{{ entry.headline }}</h1>
+            <p class="lead text-muted">{{ entry.description }}</p>
         </div>
     </section>
 
@@ -12,19 +14,29 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img src="https://via.placeholder.com/350x250" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">Read More</a>
+                {% for post in posts %}
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            {% set image = post.previewImage.one() %}
+                            {% if image %}
+                                {% set options = {
+                                    mode: 'crop',
+                                    height: 250,
+                                    width: 350
+                                } %}
+                                <img src="{{ image.getUrl(options) }}" alt="" class="card-img-top">
+                            {% endif %}
+                            <div class="card-body">
+                                <p class="card-text">{{ post.description }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="{{ post.url }}" class="btn btn-sm btn-outline-secondary">Read More</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

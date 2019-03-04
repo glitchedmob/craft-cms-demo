@@ -3,19 +3,39 @@
 {% block main %}
     <div id="home-carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
+            {% for slide in entry.slider.all() %}
+                <li
+                    data-target="#home-carousel"
+                    data-slide-to="{{ loop.index0 }}"
+                    {% if loop.first %}class="active"{% endif %}
+                ></li>
+            {% endfor %}
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://via.placeholder.com/1500x600" alt="" class="img-fluid mx-auto d-block">
-                <div class="container">
-                    <div class="carousel-caption text-left">
-                        <h2>Example headline.</h2>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            {% for slide in entry.slider.all() %}
+                <div class="carousel-item{% if loop.first %} active{% endif %}">
+                    {% set image = slide.image.one() %}
+                    {% if image %}
+                        {% set options = {
+                            mode: 'crop',
+                            height: 600,
+                            width: 1500
+                        } %}
+                        <img src="{{ image.getUrl(options) }}" alt="" class="img-fluid mx-auto d-block">
+                    {% endif %}
+                    <div class="container">
+                        <div class="carousel-caption text-left">
+                            <h2>{{ slide.headline }}</h2>
+                            <div class="rich-text">
+                                {{ slide.text|raw }}
+                            </div>
+                            <p>
+                                {{ slide.button.getLink({ class: 'btn btn-lg btn-primary' }) }}
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
         </div>
         <a class="carousel-control-prev" href="#home-carousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -29,23 +49,48 @@
 
     <div class="container marketing">
         <div class="row">
-            <div class="col-lg-4">
-                <img src="https://via.placeholder.com/150x150" alt="" class="rounded-circle">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div>
+            {% for callout in entry.imageCalloutSet.all() %}
+                <div class="col-lg-4">
+                    {% set image = callout.image.one() %}
+                    {% if image %}
+                        {% set options = {
+                            mode: 'crop',
+                            height: 150,
+                            width: 150
+                        } %}
+                        <img src="{{ image.getUrl(options) }}" alt="" class="rounded-circle">
+                    {% endif %}
+                    <h2>{{ callout.headline }}</h2>
+                    <div class="rich-text">
+                        {{ callout.text|raw }}
+                    </div>
+                    <p>
+                        {{ callout.button.getLink({ class: 'btn btn-secondary' }) }}
+                    </p>
+                </div>
+            {% endfor %}
         </div>
 
         <hr class="featurette-divider">
 
+        {% set twoColumnCallout = entry.twoColumnCallout.one() %}
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                <h2 class="featurette-heading">{{ twoColumnCallout.headline }}</h2>
+                <div class="rich-text">
+                    {{ twoColumnCallout.text|raw }}
+                </div>
             </div>
             <div class="col-md-5">
-                <img src="https://via.placeholder.com/500x500" alt="" class="featurette-image img-fluid mx-auto">
+                {% set image = twoColumnCallout.image.one() %}
+                {% if image %}
+                    {% set options = {
+                        mode: 'crop',
+                        height: 500,
+                        width: 500
+                    } %}
+                    <img src="{{ image.getUrl(options) }}" alt="" class="featurette-image img-fluid mx-auto">
+                {% endif %}
             </div>
         </div>
 
