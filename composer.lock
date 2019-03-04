@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b06b0edfa444dbc9bb26d2ef97db0ff8",
+    "content-hash": "ecfaf07d797a82f0a25512a27b2b7afc",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -471,6 +471,53 @@
                 "plugin"
             ],
             "time": "2017-07-25T13:26:24+00:00"
+        },
+        {
+            "name": "craftcms/redactor",
+            "version": "2.3.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/e4d96d805af031f4a80e5742e5651f30b55e6bca",
+                "reference": "e4d96d805af031f4a80e5742e5651f30b55e6bca",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.1.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Redactor",
+                "handle": "redactor"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\redactor\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Edit rich text content in Craft CMS using Redactor by Imperavi.",
+            "keywords": [
+                "cms",
+                "craftcms",
+                "html",
+                "redactor",
+                "yii2"
+            ],
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/redactor/issues?state=open",
+                "source": "https://github.com/craftcms/redactor",
+                "docs": "https://github.com/craftcms/redactor"
+            },
+            "time": "2019-02-21T13:34:33+00:00"
         },
         {
             "name": "craftcms/server-check",
