@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: bcb95be9-3b1b-4bbc-a7f3-ae788bb08586 # Common
+handle: imageCalloutSet
+instructions: ''
+name: 'Image Callout Set'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_imagecalloutset}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

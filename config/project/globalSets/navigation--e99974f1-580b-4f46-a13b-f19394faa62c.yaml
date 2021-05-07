@@ -1,0 +1,18 @@
+fieldLayouts:
+  9e3ec51a-bf0d-4433-b0f3-822610d4762b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 8cd7f51a-a103-4a68-a725-2712a8e53807 # Link Group
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: navigation
+name: Navigation

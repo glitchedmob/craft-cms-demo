@@ -1,8 +1,17 @@
-dateModified: 1620409795
+dateModified: 1620412527
 email:
   fromEmail: me@levizitting.com
   fromName: 'Craft CMS Demo'
   transportType: craft\mail\transportadapters\Sendmail
+plugins:
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 system:
   edition: solo
   live: true

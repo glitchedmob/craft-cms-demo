@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: bcb95be9-3b1b-4bbc-a7f3-ae788bb08586 # Common
+handle: description
+instructions: ''
+name: Description
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

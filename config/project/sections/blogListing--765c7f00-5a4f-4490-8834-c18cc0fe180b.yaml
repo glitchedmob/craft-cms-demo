@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: blogListing
+name: 'Blog Listing'
+propagationMethod: all
+siteSettings:
+  c0320d98-8104-45b9-afef-72eb058731c4: # Craft CMS Demo
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/blogListing
+    uriFormat: blog
+type: single
