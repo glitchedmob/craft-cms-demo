@@ -1,0 +1,17 @@
+dateModified: 1620405809
+email:
+  fromEmail: me@levizitting.com
+  fromName: 'Craft CMS Demo'
+  transportType: craft\mail\transportadapters\Sendmail
+system:
+  edition: solo
+  live: true
+  name: 'Craft CMS Demo'
+  schemaVersion: 3.5.13
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

@@ -1,0 +1,8 @@
+baseUrl: '@web'
+handle: default
+hasUrls: true
+language: en-US
+name: 'Craft CMS Demo'
+primary: true
+siteGroup: dd3967df-b99e-4f8b-9829-a3edf269a2cb
+sortOrder: 1
