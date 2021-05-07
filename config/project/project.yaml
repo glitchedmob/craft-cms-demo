@@ -1,4 +1,4 @@
-dateModified: 1620405809
+dateModified: 1620409795
 email:
   fromEmail: me@levizitting.com
   fromName: 'Craft CMS Demo'
@@ -7,7 +7,7 @@ system:
   edition: solo
   live: true
   name: 'Craft CMS Demo'
-  schemaVersion: 3.5.13
+  schemaVersion: 3.6.8
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
