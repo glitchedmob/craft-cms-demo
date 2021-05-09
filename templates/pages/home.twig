@@ -1,9 +1,11 @@
 {% extends 'base.twig' %}
 
+{% set slides = entry.slider.all() %}
+
 {% block main %}
     <div id="home-carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            {% for slide in entry.slider.all() %}
+            {% for slide in slides %}
                 <li
                     data-target="#home-carousel"
                     data-slide-to="{{ loop.index0 }}"
@@ -12,7 +14,7 @@
             {% endfor %}
         </ol>
         <div class="carousel-inner">
-            {% for slide in entry.slider.all() %}
+            {% for slide in slides %}
                 <div class="carousel-item{% if loop.first %} active{% endif %}">
                     {% set image = slide.image.one() %}
                     {% if image %}
@@ -74,25 +76,27 @@
         <hr class="featurette-divider">
 
         {% set twoColumnCallout = entry.twoColumnCallout.one() %}
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">{{ twoColumnCallout.headline }}</h2>
-                <div class="rich-text">
-                    {{ twoColumnCallout.text|raw }}
+        {% if twoColumnCallout %}
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">{{ twoColumnCallout.headline }}</h2>
+                    <div class="rich-text">
+                        {{ twoColumnCallout.text|raw }}
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    {% set image = twoColumnCallout.image.one() %}
+                    {% if image %}
+                        {% set options = {
+                            mode: 'crop',
+                            height: 500,
+                            width: 500
+                        } %}
+                        <img src="{{ image.getUrl(options) }}" alt="" class="featurette-image img-fluid mx-auto">
+                    {% endif %}
                 </div>
             </div>
-            <div class="col-md-5">
-                {% set image = twoColumnCallout.image.one() %}
-                {% if image %}
-                    {% set options = {
-                        mode: 'crop',
-                        height: 500,
-                        width: 500
-                    } %}
-                    <img src="{{ image.getUrl(options) }}" alt="" class="featurette-image img-fluid mx-auto">
-                {% endif %}
-            </div>
-        </div>
+        {% endif %}
 
         <hr class="featurette-divider">
     </div>
